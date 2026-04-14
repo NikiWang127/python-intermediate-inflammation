@@ -16,6 +16,4 @@
 # Virtual environments
 venv/
 .venv/
-# Virtual environments
-venv/
-.venv/
+
