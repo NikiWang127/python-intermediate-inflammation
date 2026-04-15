@@ -10,7 +10,7 @@ and each column represents a single day across all patients.
 import numpy as np
 
 
-def load_csv(filename):  
+def load_csv(filename):
     """Load a NumPy array from a CSV file.
 
     :param filename: path to the CSV file to load
@@ -44,3 +44,19 @@ def daily_min(data):
     :returns: 1D NumPy array containing the daily minimum values
     """
     return np.min(data, axis=0)
+
+
+def patient_normalise(data):
+    """
+    Normalise patient data from a 2D inflammation data array.
+
+    NaN values are ignored, and normalised to 0.
+
+    Negative values are rounded to 0.
+    """
+    max = np.nanmax(data, axis=1)
+    with np.errstate(invalid='ignore', divide='ignore'):
+        normalised = data / max[:, np.newaxis]
+    normalised[np.isnan(normalised)] = 0
+    normalised[normalised < 0] = 0
+    return normalised
