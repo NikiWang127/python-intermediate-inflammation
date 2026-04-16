@@ -16,3 +16,5 @@ Several tests have been implemented already, some of which are currently failing
 These failing tests set out the requirements for the additional code to be implemented during the workshop.
 
 The tests should be run using `pytest`, which will be introduced during the workshop.
+
+[![cov](https://nikiwang127.github.io/python-intermediate-inflammation/badges/coverage.svg)](https://github.com/NikiWang127/python-intermediate-inflammation/actions)
